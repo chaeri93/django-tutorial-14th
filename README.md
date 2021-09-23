@@ -1,6 +1,9 @@
 # django-tutorial-14th
 
-##Part 1
+
+##Part 1    
+
+
 ###1. 프로젝트 및 앱 생성
 
 ```
@@ -39,7 +42,11 @@ urlpatterns = [
 ```
 - *include()* 함수는 다른 URLconf들을 참조할 수 있도록 도와주며 Django가 함수 *include()* 를 만나게 되면, URL의 그 시점까지 일치하는 부분을 잘라내고, 남은 문자열 부분을 후속 처리를 위해 include 된 URLconf로 전달한다
 * * *
-##Part 2
+
+
+##Part 2          
+ 
+
 ###1. 모델
 * 모델이란 부가적인 메타데이터를 가진 데이터베이스의 구조이다
 * 데이터베이스의 각 필드는 Field 클래스의 인스턴스로서 표현되며 각 필드가 어떤 자료형을 가질 수 있는지를 Django 에게 말해준다.
@@ -77,7 +84,11 @@ class Choice(models.Model):
 ```
     
 * * *
-##Part 3
+
+
+##Part 3     
+
+
 ###1. View가 실제로 뭔가를 하도록 만들기
 * HttpResponse - 객체를 반환
   ```
@@ -117,7 +128,9 @@ class Choice(models.Model):
         question = get_object_or_404(Question, pk=question_id)
         return render(request, 'polls/detail.html', {'question': question})
     ```
-###2. 템플릿에서 하드코딩된 URL 제거
+  
+
+###2. 템플릿에서 하드코딩된 URL 제거  
 * 템플릿에 링크를 적으면, 이 링크는 다음과 같이 부분적으로 하드코딩된다
     ```
     #polls/index.html 
@@ -129,7 +142,11 @@ class Choice(models.Model):
     ```
   
 * * *
-##Part 4
+ 
+
+##Part 4      
+
+
 ###1. form 요소 사용
 ```
 <form action="{% url 'polls:vote' question.id %}" method="post">
@@ -157,6 +174,8 @@ class Choice(models.Model):
         selected_choice.save()
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
   ```
+  
+
 ###2. 제너릭 뷰 사용하기
 
 * 제너릭 뷰는 일반적인 패턴을 추상화하여 앱을 작성하기 위해 Python 코드를 작성하지 않아도 된다.
