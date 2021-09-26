@@ -1,10 +1,10 @@
 # django-tutorial-14th
 
 
-##Part 1    
+## Part 1    
 
 
-###1. 프로젝트 및 앱 생성
+### 1. 프로젝트 및 앱 생성
 
 ```
 $ django-admin startproject mysite #프로젝트 생성
@@ -12,7 +12,7 @@ $ python manage.py runserver #개발 서버 실행
 $ python manage.py startapp polls #설문조사 앱 생성
 ```
 
-###2. view 작성
+### 2. view 작성
 
 ```
 #polls/views.py
@@ -44,10 +44,10 @@ urlpatterns = [
 * * *
 
 
-##Part 2          
+## Part 2          
  
 
-###1. 모델
+### 1. 모델
 * 모델이란 부가적인 메타데이터를 가진 데이터베이스의 구조이다
 * 데이터베이스의 각 필드는 Field 클래스의 인스턴스로서 표현되며 각 필드가 어떤 자료형을 가질 수 있는지를 Django 에게 말해준다.
 
@@ -86,10 +86,10 @@ class Choice(models.Model):
 * * *
 
 
-##Part 3     
+## Part 3     
 
 
-###1. View가 실제로 뭔가를 하도록 만들기
+### 1. View가 실제로 뭔가를 하도록 만들기
 * HttpResponse - 객체를 반환
   ```
   #polls.views.py
@@ -130,7 +130,7 @@ class Choice(models.Model):
     ```
   
 
-###2. 템플릿에서 하드코딩된 URL 제거  
+### 2. 템플릿에서 하드코딩된 URL 제거  
 * 템플릿에 링크를 적으면, 이 링크는 다음과 같이 부분적으로 하드코딩된다
     ```
     #polls/index.html 
@@ -144,10 +144,10 @@ class Choice(models.Model):
 * * *
  
 
-##Part 4      
+## Part 4      
 
 
-###1. form 요소 사용
+### 1. form 요소 사용
 ```
 <form action="{% url 'polls:vote' question.id %}" method="post">
 {% csrf_token %}
@@ -176,7 +176,7 @@ class Choice(models.Model):
   ```
   
 
-###2. 제너릭 뷰 사용하기
+### 2. 제너릭 뷰 사용하기
 
 * 제너릭 뷰는 일반적인 패턴을 추상화하여 앱을 작성하기 위해 Python 코드를 작성하지 않아도 된다.
 * **ListView** - 개체 목록 표시 추상화
